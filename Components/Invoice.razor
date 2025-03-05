@@ -1,0 +1,51 @@
+﻿@page "/invoice"
+@rendermode InteractiveServer
+@using Client_Invoice_System.Services
+@inject InvoiceService InvoiceService
+@inject IJSRuntime JS
+@using Microsoft.JSInterop;
+
+<h3>Invoice Actions</h3>
+
+<input type="number" @bind="ClientId" placeholder="Enter Client ID" class="form-control mb-2" />
+<button class="btn btn-primary" @onclick="DownloadInvoice">Download Invoice</button>
+<button class="btn btn-success" @onclick="SendInvoice">Send Invoice via Email</button>
+
+@code {
+    private int ClientId;
+
+    private async Task DownloadInvoice()
+    {
+        if (ClientId <= 0)
+        {
+            Console.WriteLine("Invalid Client ID");
+            return;
+        }
+
+        byte[] pdfData = await InvoiceService.GenerateInvoicePdfAsync(ClientId);
+        var fileName = $"Invoice_{ClientId}.pdf";
+        var mimeType = "application/pdf";
+
+        await BlazorDownloadFile(fileName, pdfData, mimeType);
+    }
+
+    private async Task SendInvoice()
+    {
+        if (ClientId <= 0)
+        {
+            Console.WriteLine("Invalid Client ID");
+            return;
+        }
+
+        await InvoiceService.SendInvoiceToClientAsync(ClientId);
+        Console.WriteLine($"Invoice sent successfully to Client {ClientId}.");
+    }
+
+    private async Task BlazorDownloadFile(string fileName, byte[] data, string contentType)
+    {
+        await using var stream = new MemoryStream(data);
+        using var streamRef = new DotNetStreamReference(stream);
+
+        await JS.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef, contentType);
+    }
+}

@@ -1,0 +1,48 @@
+﻿@page "/owner-payment-profile"
+@rendermode InteractiveServer
+@using Client_Invoice_System.Models
+@using Client_Invoice_System.Repositories
+@inject OwnerPaymentProfileRepository OwnerPaymentProfileRepository
+
+<h3>Owner Payment Profile</h3>
+
+@if (paymentProfile != null)
+{
+    <div class="card p-4">
+        <div class="mb-3">
+            <label class="form-label">IBAN Number</label>
+            <input type="text" class="form-control" @bind="paymentProfile.IBANNumber" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Currency</label>
+            <input type="text" class="form-control" @bind="paymentProfile.Currency" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Account Title</label>
+            <input type="text" class="form-control" @bind="paymentProfile.AccountTitle" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Account Number</label>
+            <input type="text" class="form-control" @bind="paymentProfile.AccountNumber" />
+        </div>
+        <button class="btn btn-primary" @onclick="SavePaymentProfile">Save</button>
+    </div>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+@code {
+    private PaymentProfile paymentProfile = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        paymentProfile = await OwnerPaymentProfileRepository.GetOwnerPaymentProfileAsync();
+    }
+
+    private async Task SavePaymentProfile()
+    {
+        await OwnerPaymentProfileRepository.UpdateOwnerPaymentProfileAsync(paymentProfile);
+    }
+}

@@ -1,0 +1,47 @@
+﻿@page "/add-client"
+@rendermode InteractiveServer
+@page "/edit-client/{ClientId:int}"
+@using Client_Invoice_System.Models
+@using Client_Invoice_System.Repositories
+@using Client_Invoice_System.Repository
+@inject ClientRepository ClientRepo
+@inject NavigationManager Navigation
+
+<h3>@(ClientId == 0 ? "Add Client" : "Edit Client")</h3>
+
+<div>
+    <label>Name:</label>
+    <input @bind="client.Name" />
+
+    <label>Email:</label>
+    <input @bind="client.Email" />
+
+    <button @onclick="SaveClient">Save</button>
+</div>
+
+@code {
+    [Parameter] public int ClientId { get; set; }
+    private Client client = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (ClientId != 0)
+        {
+            client = await ClientRepo.GetByIdAsync(ClientId) ?? new Client();
+        }
+    }
+
+    private async Task SaveClient()
+    {
+        if (ClientId == 0)
+        {
+            await ClientRepo.AddAsync(client);
+        }
+        else
+        {
+            await ClientRepo.UpdateAsync(client);
+        }
+
+        Navigation.NavigateTo("/clients");
+    }
+}

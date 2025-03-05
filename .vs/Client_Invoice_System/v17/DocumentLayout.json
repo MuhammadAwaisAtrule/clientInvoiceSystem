@@ -1,12 +1,615 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Workspace\\Practice\\Client_Invoice_System\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\employees.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\employees.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\repository\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:repository\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\addeditclient.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\addeditclient.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\clientslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\clientslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\resources.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\resources.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\ownerpaymentprofile.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\ownerpaymentprofile.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\owner_profile.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\owner_profile.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\invoice.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\invoice.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\repository\\resourcerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:repository\\resourcerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\repository\\ownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:repository\\ownerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\repository\\ownerpaymentprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:repository\\ownerpaymentprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\repository\\activeclientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:repository\\activeclientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\models\\activeclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:models\\activeclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\models\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:models\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\models\\paymentprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:models\\paymentprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\models\\ownerprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:models\\ownerprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\models\\clientprofilecrosstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:models\\clientprofilecrosstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\pages\\activeclients.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\pages\\activeclients.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|c:\\workspace\\practice\\client_invoice_system\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70CC32D-BC84-499B-AAB6-AACEEAE0E076}|Client_Invoice_System.csproj|solutionrelative:components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAiwDMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T12:56:15.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Services\\EmailService.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Services\\EmailService.cs",
+              "RelativeToolTip": "Services\\EmailService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T09:39:06.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "InvoiceService.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Services\\InvoiceService.cs",
+              "RelativeDocumentMoniker": "Services\\InvoiceService.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Services\\InvoiceService.cs",
+              "RelativeToolTip": "Services\\InvoiceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:10:23.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClientsList.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\ClientsList.razor",
+              "RelativeDocumentMoniker": "Components\\ClientsList.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\ClientsList.razor",
+              "RelativeToolTip": "Components\\ClientsList.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T08:20:01.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employees.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Employees.razor",
+              "RelativeDocumentMoniker": "Components\\Employees.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Employees.razor",
+              "RelativeToolTip": "Components\\Employees.razor",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAC4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T10:07:43.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Invoice.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Invoice.razor",
+              "RelativeDocumentMoniker": "Components\\Invoice.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Invoice.razor",
+              "RelativeToolTip": "Components\\Invoice.razor",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T09:30:40.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Owner_Profile.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Owner_Profile.razor",
+              "RelativeDocumentMoniker": "Components\\Owner_Profile.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Owner_Profile.razor",
+              "RelativeToolTip": "Components\\Owner_Profile.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T10:16:49.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OwnerPaymentProfile.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\OwnerPaymentProfile.razor",
+              "RelativeDocumentMoniker": "Components\\OwnerPaymentProfile.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\OwnerPaymentProfile.razor",
+              "RelativeToolTip": "Components\\OwnerPaymentProfile.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T10:21:24.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Resources.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Resources.razor",
+              "RelativeDocumentMoniker": "Components\\Resources.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Resources.razor",
+              "RelativeToolTip": "Components\\Resources.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T10:40:37.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddEditClient.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\AddEditClient.razor",
+              "RelativeDocumentMoniker": "Components\\AddEditClient.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\AddEditClient.razor",
+              "RelativeToolTip": "Components\\AddEditClient.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T08:22:03.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClientRepository.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\ClientRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ClientRepository.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\ClientRepository.cs",
+              "RelativeToolTip": "Repository\\ClientRepository.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAA0wDQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:13:56.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ResourceRepository.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\ResourceRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ResourceRepository.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\ResourceRepository.cs",
+              "RelativeToolTip": "Repository\\ResourceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:14:31.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OwnerRepository.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\OwnerRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OwnerRepository.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\OwnerRepository.cs",
+              "RelativeToolTip": "Repository\\OwnerRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T10:18:06.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OwnerPaymentProfileRepository.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\OwnerPaymentProfileRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OwnerPaymentProfileRepository.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\OwnerPaymentProfileRepository.cs",
+              "RelativeToolTip": "Repository\\OwnerPaymentProfileRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T10:22:11.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\IRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IRepository.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\IRepository.cs",
+              "RelativeToolTip": "Repository\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:13:17.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\GenericRepository.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\GenericRepository.cs",
+              "RelativeToolTip": "Repository\\GenericRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:13:36.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\EmployeeRepository.cs",
+              "RelativeToolTip": "Repository\\EmployeeRepository.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:14:12.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ActiveClientRepository.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\ActiveClientRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ActiveClientRepository.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Repository\\ActiveClientRepository.cs",
+              "RelativeToolTip": "Repository\\ActiveClientRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T10:45:03.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\App.razor",
+              "RelativeDocumentMoniker": "Components\\App.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\App.razor",
+              "RelativeToolTip": "Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T08:24:00.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:14:42.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "Components\\Routes.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Routes.razor",
+              "RelativeToolTip": "Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T12:35:12.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-05T09:41:21.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Resource.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\Resource.cs",
+              "RelativeDocumentMoniker": "Models\\Resource.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\Resource.cs",
+              "RelativeToolTip": "Models\\Resource.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T12:56:38.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "OwnerProfile.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\OwnerProfile.cs",
+              "RelativeDocumentMoniker": "Models\\OwnerProfile.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\OwnerProfile.cs",
+              "RelativeToolTip": "Models\\OwnerProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T12:55:36.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\Invoice.cs",
+              "RelativeDocumentMoniker": "Models\\Invoice.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\Invoice.cs",
+              "RelativeToolTip": "Models\\Invoice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:08:46.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Models\\Employee.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\Employee.cs",
+              "RelativeToolTip": "Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T12:57:16.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PaymentProfile.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\PaymentProfile.cs",
+              "RelativeDocumentMoniker": "Models\\PaymentProfile.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\PaymentProfile.cs",
+              "RelativeToolTip": "Models\\PaymentProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T12:57:39.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ClientProfileCrossTable.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\ClientProfileCrossTable.cs",
+              "RelativeDocumentMoniker": "Models\\ClientProfileCrossTable.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\ClientProfileCrossTable.cs",
+              "RelativeToolTip": "Models\\ClientProfileCrossTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T12:56:59.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "Models\\Client.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\Client.cs",
+              "RelativeToolTip": "Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T12:55:58.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ActiveClient.cs",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\ActiveClient.cs",
+              "RelativeDocumentMoniker": "Models\\ActiveClient.cs",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Models\\ActiveClient.cs",
+              "RelativeToolTip": "Models\\ActiveClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T12:56:21.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T10:53:48.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ActiveClients.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Pages\\ActiveClients.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ActiveClients.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Pages\\ActiveClients.razor",
+              "RelativeToolTip": "Components\\Pages\\ActiveClients.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T10:44:23.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\wwwroot\\Js\\site.js",
+              "RelativeDocumentMoniker": "wwwroot\\Js\\site.js",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\wwwroot\\Js\\site.js",
+              "RelativeToolTip": "wwwroot\\Js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-03-05T08:55:27.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T08:24:32.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Error.razor",
+              "DocumentMoniker": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Pages\\Error.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Error.razor",
+              "ToolTip": "C:\\Workspace\\Practice\\Client_Invoice_System\\Components\\Pages\\Error.razor",
+              "RelativeToolTip": "Components\\Pages\\Error.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T08:24:29.47Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
