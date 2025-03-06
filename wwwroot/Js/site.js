@@ -1,10 +1,13 @@
-﻿window.downloadFileFromStream = async (fileName, streamRef, contentType) => {
-    const data = await streamRef.arrayBuffer();
-    const blob = new Blob([data], { type: contentType });
+﻿window.downloadFileFromStream = async (fileName, contentStreamReference, contentType) => {
+    const arrayBuffer = await contentStreamReference.arrayBuffer();
+    const blob = new Blob([arrayBuffer], { type: contentType });
+
     const url = URL.createObjectURL(blob);
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = fileName;
-    anchor.click();
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     URL.revokeObjectURL(url);
 };
