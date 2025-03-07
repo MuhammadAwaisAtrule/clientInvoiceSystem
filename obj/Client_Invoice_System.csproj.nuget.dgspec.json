@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspace\\Practice\\Client_Invoice_System\\Client_Invoice_System.csproj": {}
+    "C:\\Users\\ATRULE Technologies\\Source\\Repos\\clientInvoiceSystem\\Client_Invoice_System.csproj": {}
   },
   "projects": {
-    "C:\\Workspace\\Practice\\Client_Invoice_System\\Client_Invoice_System.csproj": {
+    "C:\\Users\\ATRULE Technologies\\Source\\Repos\\clientInvoiceSystem\\Client_Invoice_System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\Practice\\Client_Invoice_System\\Client_Invoice_System.csproj",
+        "projectUniqueName": "C:\\Users\\ATRULE Technologies\\Source\\Repos\\clientInvoiceSystem\\Client_Invoice_System.csproj",
         "projectName": "Client_Invoice_System",
-        "projectPath": "C:\\Workspace\\Practice\\Client_Invoice_System\\Client_Invoice_System.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\Practice\\Client_Invoice_System\\obj\\",
+        "projectPath": "C:\\Users\\ATRULE Technologies\\Source\\Repos\\clientInvoiceSystem\\Client_Invoice_System.csproj",
+        "packagesPath": "C:\\Users\\ATRULE Technologies\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ATRULE Technologies\\Source\\Repos\\clientInvoiceSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ATRULE Technologies\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

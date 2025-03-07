@@ -13,6 +13,12 @@
         <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>Address</th>
+            <th>PhoneNumber</th>
+            <th>Currency</th>
+            <th>Country</th>
+            <th>DueDate</th>
+            <th>ClientIdentifier</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -24,6 +30,12 @@
                 <tr>
                     <td>@client.Name</td>
                     <td>@client.Email</td>
+                    <td>@client.Address</td>
+                    <td>@client.PhoneNumber</td>
+                    <td>@client.Currency</td>
+                    <td>@client.Country</td>
+                    <td>@client.DueDate</td>
+                    <td>@client.ClientIdentifier</td>
                     <td>
                         <button @onclick="() => EditClient(client.ClientId)">Edit</button>
                         <button @onclick="() => DeleteClient(client.ClientId)">Delete</button>
