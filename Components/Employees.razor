@@ -3,6 +3,7 @@
 @using Client_Invoice_System.Models
 @using Client_Invoice_System.Repositories
 @using Client_Invoice_System.Repository
+@using System.Globalization
 @inject EmployeeRepository EmployeeRepository
 
 <h3>Employees</h3>
@@ -26,7 +27,7 @@
                 <td>@employee.EmployeeId</td>
                 <td>@employee.EmployeeName</td>
                 <td>@employee.Designation</td>
-                <td>@employee.HourlyRate.ToString("C")</td>
+                <td>@employee.HourlyRate.ToString("C", new CultureInfo("en-US"))</td>
                 <td>
                     <button class="btn btn-sm btn-warning" @onclick="() => EditEmployee(employee.EmployeeId)">Edit</button>
                     <button class="btn btn-sm btn-danger" @onclick="() => DeleteEmployee(employee.EmployeeId)">Delete</button>

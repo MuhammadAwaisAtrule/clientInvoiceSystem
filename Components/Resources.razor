@@ -1,15 +1,16 @@
 ﻿@page "/resources"
-@rendermode InteractiveServer
 @using Client_Invoice_System.Models
-@using Client_Invoice_System.Repositories
 @using Client_Invoice_System.Repository
+@inject NavigationManager Navigation
 @inject ResourceRepository ResourceRepository
 @inject EmployeeRepository EmployeeRepository
 @inject ClientRepository ClientRepository
 
 <h3>Manage Resources</h3>
 
-@if (ResourcesList != null)
+<button class="btn btn-primary mb-3" @onclick="NavigateToAddResource">Add Resource</button>
+
+@if (ResourcesList != null && ResourcesList.Any())
 {
     <table class="table">
         <thead>
@@ -25,12 +26,12 @@
             @foreach (var resource in ResourcesList)
             {
                 <tr>
-                    <td>@resource.Client.Name</td>
+                    <td>@(resource.Client?.Name ?? "Unknown")</td>
                     <td>@resource.ResourceName</td>
-                    <td>@resource.Employee.EmployeeName</td>
+                    <td>@(resource.Employee?.EmployeeName ?? "Unknown")</td>
                     <td>@resource.ConsumedTotalHours</td>
                     <td>
-                        <button class="btn btn-warning btn-sm" @onclick="() => EditResource(resource)">Edit</button>
+                        <button class="btn btn-warning btn-sm" @onclick="() => NavigateToEditResource(resource.ResourceId)">Edit</button>
                         <button class="btn btn-danger btn-sm" @onclick="() => DeleteResource(resource.ResourceId)">Delete</button>
                     </td>
                 </tr>
@@ -43,80 +44,22 @@ else
     <p>Loading...</p>
 }
 
-<h4>@(EditingResource.ResourceId == 0 ? "Add Resource" : "Edit Resource")</h4>
-<div class="card p-3">
-    <div class="mb-3">
-        <label class="form-label">Client</label>
-        <select class="form-control" @bind="EditingResource.ClientId">
-            <option value="">Select Client</option>
-            @foreach (var client in Clients)
-            {
-                <option value="@client.ClientId">@client.Name</option>
-            }
-        </select>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Resource Name</label>
-        <input type="text" class="form-control" @bind="EditingResource.ResourceName" />
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Employee</label>
-        <select class="form-control" @bind="EditingResource.EmployeeId">
-            <option value="">Select Employee</option>
-            @foreach (var emp in Employees)
-            {
-                <option value="@emp.EmployeeId">@emp.EmployeeName</option>
-            }
-        </select>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Consumed Hours</label>
-        <input type="number" class="form-control" @bind="EditingResource.ConsumedTotalHours" />
-    </div>
-
-    <button class="btn btn-primary" @onclick="SaveResource">@(EditingResource.ResourceId == 0 ? "Add" : "Update") Resource</button>
-</div>
-
 @code {
     private List<Resource> ResourcesList = new();
-    private List<Client> Clients = new();
-    private List<Employee> Employees = new();
-    private Resource EditingResource = new();
 
     protected override async Task OnInitializedAsync()
     {
         ResourcesList = (await ResourceRepository.GetAllAsync()).ToList();
-        Clients = (await ClientRepository.GetAllAsync()).ToList();
-        Employees = (await EmployeeRepository.GetAllAsync()).ToList();
     }
 
-    private void EditResource(Resource resource)
+    private void NavigateToAddResource()
     {
-        EditingResource = new Resource
-            {
-                ResourceId = resource.ResourceId,
-                ClientId = resource.ClientId,
-                ResourceName = resource.ResourceName,
-                EmployeeId = resource.EmployeeId,
-                ConsumedTotalHours = resource.ConsumedTotalHours
-            };
+        Navigation.NavigateTo("/add-edit-resource");
     }
 
-    private async Task SaveResource()
+    private void NavigateToEditResource(int resourceId)
     {
-        if (EditingResource.ResourceId == 0)
-        {
-            await ResourceRepository.AddAsync(EditingResource);
-        }
-        else
-        {
-            await ResourceRepository.UpdateAsync(EditingResource);
-        }
-        ResourcesList = (await ResourceRepository.GetAllAsync()).ToList();
-        EditingResource = new();
+        Navigation.NavigateTo($"/add-edit-resource/{resourceId}");
     }
 
     private async Task DeleteResource(int resourceId)

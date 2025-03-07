@@ -11,8 +11,14 @@
 <table class="table">
     <thead>
         <tr>
+            <th>ClientIdentifier</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Address</th>
+            <th>PhoneNumber</th>
+            <th>Currency</th>
+            <th>Country</th>
+            <th>DueDate</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -22,8 +28,15 @@
             @foreach (var client in clients)
             {
                 <tr>
+                    <td>@client.ClientIdentifier</td>
                     <td>@client.Name</td>
                     <td>@client.Email</td>
+                    <td>@client.Address</td>
+                    <td>@client.PhoneNumber</td>
+                    <td>@client.Currency</td>
+                    <td>@client.Country</td>
+                    <td>@client.DueDate</td>
+                    
                     <td>
                         <button @onclick="() => EditClient(client.ClientId)">Edit</button>
                         <button @onclick="() => DeleteClient(client.ClientId)">Delete</button>
@@ -41,22 +54,51 @@
 
     protected override async Task OnInitializedAsync()
     {
-        clients = (await ClientRepo.GetAllAsync()).ToList();
+        try
+        {
+            clients = (await ClientRepo.GetAllAsync()).ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading clients: {ex.Message}");
+        }
     }
 
     private void AddClient()
     {
-        Navigation.NavigateTo("/add-client");
+        try
+        {
+            Navigation.NavigateTo("/add-client");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Navigation error: {ex.Message}");
+        }
     }
 
     private void EditClient(int id)
     {
-        Navigation.NavigateTo($"/edit-client/{id}");
+        try
+        {
+            Navigation.NavigateTo($"/edit-client/{id}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Navigation error: {ex.Message}");
+        }
     }
 
     private async Task DeleteClient(int id)
     {
-        await ClientRepo.DeleteAsync(id);
-        clients = (await ClientRepo.GetAllAsync()).ToList(); // Refresh list
+        try
+        {
+            await ClientRepo.DeleteAsync(id);
+            clients = (await ClientRepo.GetAllAsync()).ToList(); 
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error deleting client: {ex.Message}");
+        }
     }
+
 }

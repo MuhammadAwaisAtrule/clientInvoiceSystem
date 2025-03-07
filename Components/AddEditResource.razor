@@ -1,0 +1,83 @@
+﻿@page "/add-edit-resource/{ResourceId:int?}"
+@using Client_Invoice_System.Models
+@using Client_Invoice_System.Repository
+@inject NavigationManager Navigation
+@inject ResourceRepository ResourceRepository
+@inject EmployeeRepository EmployeeRepository
+@inject ClientRepository ClientRepository
+
+<h4>@(EditingResource.ResourceId == 0 ? "Add Resource" : "Edit Resource")</h4>
+
+<div class="card p-3">
+    <div class="mb-3">
+        <label class="form-label">Client</label>
+        <select class="form-control" @bind="EditingResource.ClientId">
+            <option value="">Select Client</option>
+            @foreach (var client in Clients)
+            {
+                <option value="@client.ClientId">@client.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Resource Name</label>
+        <input type="text" class="form-control" @bind="EditingResource.ResourceName" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Employee</label>
+        <select class="form-control" @bind="EditingResource.EmployeeId">
+            <option value="">Select Employee</option>
+            @foreach (var emp in Employees)
+            {
+                <option value="@emp.EmployeeId">@emp.EmployeeName</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Consumed Hours</label>
+        <input type="number" class="form-control" @bind="EditingResource.ConsumedTotalHours" />
+    </div>
+
+    <button class="btn btn-success" @onclick="SaveResource">@(EditingResource.ResourceId == 0 ? "Add" : "Update") Resource</button>
+    <button class="btn btn-secondary ms-2" @onclick="Cancel">Cancel</button>
+</div>
+
+@code {
+    [Parameter] public int? ResourceId { get; set; }
+    private Resource EditingResource = new();
+    private List<Client> Clients = new();
+    private List<Employee> Employees = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Clients = (await ClientRepository.GetAllAsync()).ToList();
+        Employees = (await EmployeeRepository.GetAllAsync()).ToList();
+
+        if (ResourceId.HasValue)
+        {
+            EditingResource = await ResourceRepository.GetByIdAsync(ResourceId.Value) ?? new();
+        }
+    }
+
+    private async Task SaveResource()
+    {
+        if (EditingResource.ResourceId == 0)
+        {
+            await ResourceRepository.AddAsync(EditingResource);
+        }
+        else
+        {
+            await ResourceRepository.UpdateAsync(EditingResource);
+        }
+
+        Navigation.NavigateTo("/resources");
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/resources");
+    }
+}

@@ -49,5 +49,36 @@ namespace Client_Invoice_System.Repository
                 .Include(r => r.Employee)
                 .FirstOrDefaultAsync(r => r.ResourceId == resourceId);
         }
+        public async Task<List<Resource>> GetAllAsync()
+        {
+            return await Task.FromResult(_context.Resources.ToList());
+        }
+
+        public async Task<Resource> GetByIdAsync(int resourceId)
+        {
+            return await Task.FromResult(_context.Resources.FirstOrDefault(r => r.ResourceId == resourceId));
+        }
+
+        public async Task AddAsync(Resource resource)
+        {
+            _context.Resources.Add(resource);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(Resource resource)
+        {
+            _context.Resources.Update(resource);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int resourceId)
+        {
+            var resource = _context.Resources.FirstOrDefault(r => r.ResourceId == resourceId);
+            if (resource != null)
+            {
+                _context.Resources.Remove(resource);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }
