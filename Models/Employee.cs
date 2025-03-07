@@ -8,7 +8,6 @@ namespace Client_Invoice_System.Models
         [Key]
         public int EmployeeId { get; set; }
 
-        [Required]
         public string EmployeeName { get; set; }
 
         public string Designation { get; set; }

@@ -7,6 +7,7 @@ using Client_Invoice_System.Data;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using System.Globalization;
 
 namespace Client_Invoice_System.Services
 {
@@ -76,25 +77,24 @@ namespace Client_Invoice_System.Services
                             {
                                 table.ColumnsDefinition(columns =>
                                 {
-                                    columns.RelativeColumn();
-                                    columns.RelativeColumn();
-                                    columns.RelativeColumn();
-                                    columns.RelativeColumn();
+                                    columns.ConstantColumn(80);
+                                    columns.ConstantColumn(120);
+                                    columns.ConstantColumn(180);
+                                    columns.ConstantColumn(150);
                                 });
 
-                                table.Cell().AlignLeft().Text("Atrule Technologies").Bold();
-                                table.Cell().AlignLeft().Text("2nd Floor, Khawar Center, SP Chowk, Multan Pakistan");
-                                table.Cell().AlignLeft().Text($"Client: {client.Name}\n{client.Address}\nEmail: {client.Email}\nPhone: {client.PhoneNumber}");
-                                table.Cell().AlignRight().Text($"Invoice No: INV/{DateTime.Now.Year}/000{clientId}\nDate: {DateTime.Now:MM/dd/yyyy}").Bold();
+                                table.Cell().Border(1).Padding(2).AlignLeft().Text("Atrule Technologies").Bold();
+                                table.Cell().Border(1).Padding(2).AlignLeft().Text("From\nAtrule Technologies,\n2nd Floor, Khawar Center, SP Chowk, Multan Pakistan");
+                                table.Cell().Border(1).Padding(2).AlignLeft().Text($"To\n{client.Name}\n{client.Address}\nEmail: {client.Email}\nPhone: {client.PhoneNumber}");
+                                table.Cell().Border(1).Padding(2).AlignLeft().Text($"Invoice No: INV/{DateTime.Now.Year}/000{clientId}\nDate: {DateTime.Now:MM/dd/yyyy}").Bold();
                             });
 
                             page.Content().Column(col =>
                             {
-                                col.Item().AlignCenter().Text("INVOICE").FontSize(22).Bold();
-                                col.Item().PaddingBottom(10).LineHorizontal(1);
+                                col.Item().PaddingTop(20);
 
                                 // ---- PAYMENT INSTRUCTIONS ----
-                                col.Item().Container().PaddingBottom(5).Text("Payment Instructions (Wire Transfer)").Bold();
+                                col.Item().Container().PaddingBottom(5).Text("Payment Instructions (Wire Transfer to Pakistan Bank)").Bold();
                                 col.Item().Table(table =>
                                 {
                                     table.ColumnsDefinition(columns =>
@@ -109,7 +109,7 @@ namespace Client_Invoice_System.Services
                                         table.Cell().Padding(2).Text(value);
                                     }
 
-                                    AddPaymentRow("Currency:", "GBP");
+                                    AddPaymentRow("Currency:", "USD");
                                     AddPaymentRow("Bank Name:", "Habib Bank");
                                     AddPaymentRow("Swift Code:", "HABBPKKA");
                                     AddPaymentRow("Account Title:", paymentProfile.AccountTitle);
@@ -120,48 +120,75 @@ namespace Client_Invoice_System.Services
 
                                 col.Item().PaddingTop(10);
 
-                                // ---- SERVICE DETAILS TABLE ----
-                                col.Item().Container().PaddingTop(5).Text("Service Details").Bold();
-                                col.Item().Container().PaddingTop(5).LineHorizontal(1);
 
+                                col.Item().Container().PaddingTop(5);
+
+                                col.Item().PaddingTop(5);
                                 col.Item().Table(table =>
                                 {
                                     table.ColumnsDefinition(columns =>
                                     {
-                                        columns.RelativeColumn(); // Description
-                                        columns.ConstantColumn(50); // Quantity
-                                        columns.ConstantColumn(70); // Rate
-                                        columns.ConstantColumn(100); // Subtotal
+                                        columns.RelativeColumn();
+                                        columns.ConstantColumn(60);
+                                        columns.ConstantColumn(80);
+                                        columns.ConstantColumn(120);
                                     });
 
                                     table.Header(header =>
                                     {
-                                        header.Cell().Border(1).Padding(2).Text("Description").Bold();
-                                        header.Cell().Border(1).Padding(2).AlignCenter().Text("Qty").Bold();
-                                        header.Cell().Border(1).Padding(2).AlignCenter().Text("Rate ($)").Bold();
-                                        header.Cell().Border(1).Padding(2).AlignCenter().Text("Subtotal ($)").Bold();
+                                        string headerColor = "#2F4F4F";
+
+                                        header.Cell().Background(Color.FromHex(headerColor)).Padding(5)
+                                            .Text(text => text.Span("Description").FontColor(Colors.White).Bold());
+
+                                        header.Cell().Background(Color.FromHex(headerColor)).Padding(5)
+                                            .Text(text => text.Span("Quantity").FontColor(Colors.White).Bold());
+
+                                        header.Cell().Background(Color.FromHex(headerColor)).Padding(5)
+                                            .Text(text => text.Span("Rate ($)").FontColor(Colors.White).Bold());
+
+                                        header.Cell().Background(Color.FromHex(headerColor)).Padding(5)
+                                            .Text(text => text.Span("Subtotal ($)").FontColor(Colors.White).Bold());
                                     });
 
                                     foreach (var resource in client.Resources)
                                     {
-                                        table.Cell().Border(1).Padding(2).Text($"{resource.ResourceName} - {resource.Employee.Designation} - Monthly Contract - {DateTime.Now:MMMM yyyy}");
-                                        table.Cell().Border(1).Padding(2).AlignCenter().Text(resource.ConsumedTotalHours.ToString());
-                                        table.Cell().Border(1).Padding(2).AlignCenter().Text($"{resource.Employee.HourlyRate:F2}");
-                                        table.Cell().Border(1).Padding(2).AlignCenter().Text($"{(resource.ConsumedTotalHours * resource.Employee.HourlyRate):F2}");
+                                        table.Cell().ColumnSpan(4).Border(1).Padding(5).Text($"{resource.ResourceName} - {resource.Employee.Designation} - Monthly Contract - {DateTime.Now:MMMM yyyy}");
+
+                                        table.Cell().ColumnSpan(1).Border(1).Padding(5).Text($"Calculation\nAmount in $: {resource.ConsumedTotalHours} Hours X {resource.Employee.HourlyRate.ToString("C2", new CultureInfo("en-US"))} = {(resource.ConsumedTotalHours * resource.Employee.HourlyRate).ToString("C2", new CultureInfo("en-US"))}");
+                                        //table.Cell().ColumnSpan(3).Border(1).Padding(5)
+                                        //    .Text($"Amount in USD: {resource.ConsumedTotalHours} Hours X {resource.Employee.HourlyRate:C2} = {(resource.ConsumedTotalHours * resource.Employee.HourlyRate):C2}")
+                                        //    .Italic();
+
+                                        //table.Cell().Border(1).Padding(5).Text(""); // Empty cell for spacing
+                                        table.Cell().Border(1).Padding(5).AlignCenter().Text("1");
+                                        table.Cell().Border(1).Padding(5).AlignCenter().Text($"{resource.Employee.HourlyRate.ToString("C2", new CultureInfo("en-US"))}");
+                                        table.Cell().Border(1).Padding(5).AlignCenter().Text($"{(resource.ConsumedTotalHours * resource.Employee.HourlyRate).ToString("C2", new CultureInfo("en-US"))}");
                                     }
+
+                                    // Last Section: Software Consultancy & Total Amount
+                                    table.Cell().ColumnSpan(1).Border(1).Padding(5).Text("Software Consultancy Services").Bold();
+                                    table.Cell().ColumnSpan(3).Border(1).Table(subTable =>
+                                    {
+                                        subTable.ColumnsDefinition(subCols =>
+                                        {
+                                            subCols.RelativeColumn();
+                                            subCols.ConstantColumn(100);
+                                        });
+
+                                        subTable.Cell().Padding(5).Text("Total").Bold();
+                                        subTable.Cell().Padding(5).AlignRight().Text($" {totalAmount.ToString("C2", new CultureInfo("en-US"))}").Bold();
+
+                                        subTable.Cell().Padding(5).Text("Total Due By").Bold();
+                                        subTable.Cell().Padding(5).AlignRight().Text($"{DateTime.Now.AddDays(5):MM/dd/yyyy}").Bold();
+                                    });
                                 });
+
 
                                 col.Item().PaddingTop(5);
-
-                                // ---- TOTAL AMOUNT & DUE DATE ----
-                                col.Item().AlignRight().Column(rightCol =>
-                                {
-                                    rightCol.Item().Text($"Total Amount: USD {totalAmount:F2}").Bold();
-                                    rightCol.Item().Text($"Total Due By: {DateTime.Now.AddDays(5):MM/dd/yyyy}");
-                                });
                             });
 
-                            // ---- FOOTER ----
+                            // FOOTER 
                             page.Footer().AlignCenter().Text("Email: suleman@atrule.com | Web: atrule.com | Phone: +92-313-6120356").FontSize(10);
                         });
                     }).GeneratePdf(ms);

@@ -8,25 +8,34 @@
 
 @if (paymentProfile != null)
 {
-    <div class="card p-4">
-        <div class="mb-3">
-            <label class="form-label">IBAN Number</label>
-            <input type="text" class="form-control" @bind="paymentProfile.IBANNumber" />
+    <EditForm Model="paymentProfile" OnValidSubmit="SavePaymentProfile">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="card p-4">
+            <div class="mb-3">
+                <label class="form-label">IBAN Number</label>
+                <InputText class="form-control" @bind-Value="paymentProfile.IBANNumber" />
+                <ValidationMessage For="() => paymentProfile.IBANNumber" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Currency</label>
+                <InputText class="form-control" @bind-Value="paymentProfile.Currency" />
+                <ValidationMessage For="() => paymentProfile.Currency" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Account Title</label>
+                <InputText class="form-control" @bind-Value="paymentProfile.AccountTitle" />
+                <ValidationMessage For="() => paymentProfile.AccountTitle" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Account Number</label>
+                <InputText class="form-control" @bind-Value="paymentProfile.AccountNumber" />
+                <ValidationMessage For="() => paymentProfile.AccountNumber" class="text-danger" />
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Currency</label>
-            <input type="text" class="form-control" @bind="paymentProfile.Currency" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Account Title</label>
-            <input type="text" class="form-control" @bind="paymentProfile.AccountTitle" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Account Number</label>
-            <input type="text" class="form-control" @bind="paymentProfile.AccountNumber" />
-        </div>
-        <button class="btn btn-primary" @onclick="SavePaymentProfile">Save</button>
-    </div>
+    </EditForm>
 }
 else
 {
