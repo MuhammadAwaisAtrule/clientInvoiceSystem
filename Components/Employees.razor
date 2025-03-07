@@ -1,0 +1,83 @@
+﻿@page "/employees"
+@rendermode InteractiveServer
+@using Client_Invoice_System.Models
+@using Client_Invoice_System.Repositories
+@using Client_Invoice_System.Repository
+@inject EmployeeRepository EmployeeRepository
+
+<h3>Employees</h3>
+
+<button class="btn btn-primary mb-3" @onclick="ShowAddEmployeeModal">Add Employee</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Hourly Rate</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in employees)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.EmployeeName</td>
+                <td>@employee.Designation</td>
+                <td>@employee.HourlyRate.ToString("C")</td>
+                <td>
+                    <button class="btn btn-sm btn-warning" @onclick="() => EditEmployee(employee.EmployeeId)">Edit</button>
+                    <button class="btn btn-sm btn-danger" @onclick="() => DeleteEmployee(employee.EmployeeId)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Employee> employees = new();
+    private bool ShowEmployeeModal = false;
+    private Employee SelectedEmployee = new();
+    private bool IsEditMode = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        employees = (await EmployeeRepository.GetAllAsync()).ToList();
+    }
+
+    private void ShowAddEmployeeModal()
+    {
+        SelectedEmployee = new Employee();
+        IsEditMode = false;
+        ShowEmployeeModal = true;
+    }
+
+    private async Task SaveEmployee()
+    {
+        if (IsEditMode)
+        {
+            await EmployeeRepository.UpdateAsync(SelectedEmployee);
+        }
+        else
+        {
+            await EmployeeRepository.AddAsync(SelectedEmployee);
+        }
+        ShowEmployeeModal = false;
+        employees = (await EmployeeRepository.GetAllAsync()).ToList();
+    }
+
+    private async Task EditEmployee(int employeeId)
+    {
+        SelectedEmployee = await EmployeeRepository.GetByIdAsync(employeeId);
+        IsEditMode = true;
+        ShowEmployeeModal = true;
+    }
+
+    private async Task DeleteEmployee(int employeeId)
+    {
+        await EmployeeRepository.DeleteAsync(employeeId);
+        employees = (await EmployeeRepository.GetAllAsync()).ToList();
+    }
+}

@@ -1,0 +1,62 @@
+﻿@page "/clients"
+@rendermode InteractiveServer
+@using Client_Invoice_System.Models
+@using Client_Invoice_System.Repositories
+@using Client_Invoice_System.Repository
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@inject ClientRepository ClientRepo
+@inject NavigationManager Navigation
+
+<h3>Clients</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (clients != null)
+        {
+            @foreach (var client in clients)
+            {
+                <tr>
+                    <td>@client.Name</td>
+                    <td>@client.Email</td>
+                    <td>
+                        <button @onclick="() => EditClient(client.ClientId)">Edit</button>
+                        <button @onclick="() => DeleteClient(client.ClientId)">Delete</button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<button @onclick="AddClient">Add New Client</button>
+
+@code {
+    private List<Client> clients;
+
+    protected override async Task OnInitializedAsync()
+    {
+        clients = (await ClientRepo.GetAllAsync()).ToList();
+    }
+
+    private void AddClient()
+    {
+        Navigation.NavigateTo("/add-client");
+    }
+
+    private void EditClient(int id)
+    {
+        Navigation.NavigateTo($"/edit-client/{id}");
+    }
+
+    private async Task DeleteClient(int id)
+    {
+        await ClientRepo.DeleteAsync(id);
+        clients = (await ClientRepo.GetAllAsync()).ToList(); // Refresh list
+    }
+}

@@ -1,0 +1,80 @@
+﻿@page "/invoice"
+@rendermode InteractiveServer
+@using Client_Invoice_System.Services
+@inject InvoiceService InvoiceService
+@inject IJSRuntime JS
+@using Microsoft.JSInterop;
+
+<h3>Invoice Actions</h3>
+
+<input type="number" @bind="ClientId" placeholder="Enter Client ID" class="form-control mb-2" />
+<button class="btn btn-primary" @onclick="DownloadInvoice">Download Invoice</button>
+<button class="btn btn-success" @onclick="SendInvoice">Send Invoice via Email</button>
+
+@code {
+    private int ClientId;
+
+    private async Task DownloadInvoice()
+    {
+        try
+        {
+            if (ClientId <= 0)
+            {
+                Console.WriteLine("Invalid Client ID");
+                return;
+            }
+
+            byte[] pdfData = await InvoiceService.GenerateInvoicePdfAsync(ClientId);
+            var fileName = $"Invoice_{ClientId}.pdf";
+            var mimeType = "application/pdf";
+
+            await BlazorDownloadFile(fileName, pdfData, mimeType);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error downloading invoice: {ex.Message}");
+        }
+    }
+
+    private async Task SendInvoice()
+    {
+        try
+        {
+            if (ClientId <= 0)
+            {
+                Console.WriteLine("Invalid Client ID");
+                return;
+            }
+
+            await InvoiceService.SendInvoiceToClientAsync(ClientId);
+            Console.WriteLine($"Invoice sent successfully to Client {ClientId}.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending invoice: {ex.Message}");
+        }
+    }
+
+    private async Task BlazorDownloadFile(string fileName, byte[] data, string contentType)
+    {
+        try
+        {
+            await using var stream = new MemoryStream(data);
+            using var streamRef = new DotNetStreamReference(stream);
+
+            Console.WriteLine("Attempting to invoke JS function...");
+            await JS.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef, contentType);
+            Console.WriteLine("JS function executed successfully.");
+        }
+        catch (JSException jsEx)
+        {
+            Console.WriteLine($"JavaScript error: {jsEx.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error invoking JS function for download: {ex.Message}");
+        }
+    }
+
+
+}
