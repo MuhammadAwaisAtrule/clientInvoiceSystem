@@ -1,4 +1,5 @@
 ﻿@page "/add-edit-resource/{ResourceId:int?}"
+@rendermode InteractiveServer
 @using Client_Invoice_System.Models
 @using Client_Invoice_System.Repository
 @inject NavigationManager Navigation
@@ -40,9 +41,10 @@
         <label class="form-label">Consumed Hours</label>
         <input type="number" class="form-control" @bind="EditingResource.ConsumedTotalHours" />
     </div>
-
+    <div class="d-flex justify-content-end gap-2">
     <button class="btn btn-success" @onclick="SaveResource">@(EditingResource.ResourceId == 0 ? "Add" : "Update") Resource</button>
     <button class="btn btn-secondary ms-2" @onclick="Cancel">Cancel</button>
+    </div>
 </div>
 
 @code {

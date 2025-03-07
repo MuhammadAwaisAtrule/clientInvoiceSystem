@@ -60,18 +60,28 @@ namespace Client_Invoice_System.Repository
         {
             try
             {
+                var client = await _dbSet.FindAsync(clientId);
+                if (client == null)
+                {
+                    Console.WriteLine($"Client with ID {clientId} not found.");
+                    return; 
+                }
+
                 var activeClient = await _context.ActiveClients.FirstOrDefaultAsync(ac => ac.ClientId == clientId);
                 if (activeClient != null)
                 {
-                    activeClient.Status = false;
-                    await _context.SaveChangesAsync();
+                    _context.ActiveClients.Remove(activeClient); 
                 }
+
+                _dbSet.Remove(client); 
+                await _context.SaveChangesAsync(); 
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error deleting client: {ex.Message}");
             }
         }
+
 
         public async Task<Client> GetByIdAsync(int clientId)
         {

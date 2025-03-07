@@ -26,7 +26,8 @@
             <label class="form-label">Billing Address</label>
             <textarea class="form-control" @bind="Owner.BillingAddress"></textarea>
         </div>
-        <button class="btn btn-primary" @onclick="SaveOwnerProfile">Save</button>
+        <div class="d-flex justify-content-end gap-2"><button class="btn btn-primary" @onclick="SaveOwnerProfile">Save</button></div>
+        
     </div>
 }
 else

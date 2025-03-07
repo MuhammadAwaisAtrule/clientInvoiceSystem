@@ -7,28 +7,62 @@
 @inject ClientRepository ClientRepo
 @inject NavigationManager Navigation
 
-<h3>@(ClientId == 0 ? "Add Client" : "Edit Client")</h3>
+<h3 class="text-primary">@(ClientId == 0 ? "Add Client" : "Edit Client")</h3>
+<EditForm Model="client" OnValidSubmit="SaveClient">
+    <DataAnnotationsValidator />
+    <ValidationSummary/>
 
-<div>
-    <label>Name:</label>
-    <input @bind="client.Name" />
+    <div class="card shadow p-4">
+        <div class="mb-3">
+            <label class="form-label">Name:</label>
+            <InputText class="form-control" @bind-Value="client.Name" />
+        </div>
 
-    <label>Email:</label>
-    <input @bind="client.Email" />
-    <label>Address:</label>
-    <input @bind="client.Address" />
+        <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <InputText class="form-control" type="email" @bind-Value="client.Email" />
+        </div>
 
-    <label>PhoneNumber:</label>
-    <input @bind="client.PhoneNumber" />
-    <label>Currency:</label>
-    <input @bind="client.Currency" />
-    <label>Country:</label>
-    <input @bind="client.Country" />
-    <label>DueDate:</label>
-    <input @bind="client.DueDate" />
+        <div class="mb-3">
+            <label class="form-label">Password:</label>
+            <InputText class="form-control" type="password" @bind-Value="client.Password" />
+        </div>
 
-    <button @onclick="SaveClient">Save</button>
-</div>
+        <div class="mb-3">
+            <label class="form-label">Address:</label>
+            <InputText class="form-control" @bind-Value="client.Address" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Phone Number:</label>
+            <InputText class="form-control" @bind-Value="client.PhoneNumber" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Currency:</label>
+            <InputText class="form-control" @bind-Value="client.Currency" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Country:</label>
+            <InputText class="form-control" @bind-Value="client.Country" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Due Date:</label>
+            <InputDate class="form-control" @bind-Value="client.DueDate" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Client Identifier:</label>
+            <InputText class="form-control" @bind-Value="client.ClientIdentifier" maxlength="5" />
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</EditForm>
 
 @code {
     [Parameter] public int ClientId { get; set; }

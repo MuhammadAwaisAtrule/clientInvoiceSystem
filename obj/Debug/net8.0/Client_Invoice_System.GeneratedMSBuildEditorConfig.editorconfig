@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRFZGl0Q2xpZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Workspace/Practice/Client_Invoice_System/Components/AddEditEmployee.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRFZGl0RW1wbG95ZWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Workspace/Practice/Client_Invoice_System/Components/AddEditResource.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRFZGl0UmVzb3VyY2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
