@@ -24,10 +24,6 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/ActiveClients.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEFjdGl2ZUNsaWVudHMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/AddEditClient.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEFkZEVkaXRDbGllbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

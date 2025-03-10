@@ -4,6 +4,7 @@ using Client_Invoice_System.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Client_Invoice_System.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250310122525_update deletion Resource Status")]
+    partial class updatedeletionResourceStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,28 @@ namespace Client_Invoice_System.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Client_Invoice_System.Models.ActiveClient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId")
+                        .IsUnique();
+
+                    b.ToTable("ActiveClients");
+                });
 
             modelBuilder.Entity("Client_Invoice_System.Models.Client", b =>
                 {
@@ -58,6 +83,7 @@ namespace Client_Invoice_System.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ClientId");
@@ -235,6 +261,17 @@ namespace Client_Invoice_System.Migrations
                     b.ToTable("Resources");
                 });
 
+            modelBuilder.Entity("Client_Invoice_System.Models.ActiveClient", b =>
+                {
+                    b.HasOne("Client_Invoice_System.Models.Client", "Client")
+                        .WithOne("ActiveClient")
+                        .HasForeignKey("Client_Invoice_System.Models.ActiveClient", "ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+                });
+
             modelBuilder.Entity("Client_Invoice_System.Models.ClientProfileCrossTable", b =>
                 {
                     b.HasOne("Client_Invoice_System.Models.Client", "Client")
@@ -297,6 +334,9 @@ namespace Client_Invoice_System.Migrations
 
             modelBuilder.Entity("Client_Invoice_System.Models.Client", b =>
                 {
+                    b.Navigation("ActiveClient")
+                        .IsRequired();
+
                     b.Navigation("ClientProfileCrosses");
 
                     b.Navigation("Resources");

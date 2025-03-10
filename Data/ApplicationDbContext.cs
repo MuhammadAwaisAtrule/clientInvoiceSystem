@@ -11,7 +11,6 @@ namespace Client_Invoice_System.Data
         public DbSet<OwnerProfile> Owners { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
-        public DbSet<ActiveClient> ActiveClients { get; set; }
         public DbSet<Resource> Resources { get; set; }
         public DbSet<ClientProfileCrossTable> ClientProfileCrosses { get; set; }
         public DbSet<Employee> Employees { get; set; }
@@ -19,31 +18,28 @@ namespace Client_Invoice_System.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
-            // ✅ Active Client & Client Relationship (Fixes ClientId1 issue)
-            modelBuilder.Entity<ActiveClient>()
-                .HasOne(ac => ac.Client)
-                .WithOne(c => c.ActiveClient)
-                .HasForeignKey<ActiveClient>(ac => ac.ClientId)
-                .OnDelete(DeleteBehavior.Cascade);
+          
 
-            // ✅ Owner & Payment Profile Relationship
+            // ✅ Owner & Payment Profile Relationship (Fixes Orphaned PaymentProfiles)
             modelBuilder.Entity<OwnerProfile>()
                 .HasOne(o => o.PaymentProfile)
                 .WithOne(p => p.Owner)
-                .HasForeignKey<PaymentProfile>(p => p.OwnerId);
+                .HasForeignKey<PaymentProfile>(p => p.OwnerId)
+                .OnDelete(DeleteBehavior.Cascade);  // ✅ Ensures PaymentProfile is deleted when Owner is deleted
 
-            // ✅ Client & Resources Relationship
+            // ✅ Client & Resources Relationship (Fixes Orphaned Resources)
             modelBuilder.Entity<Client>()
                 .HasMany(c => c.Resources)
                 .WithOne(r => r.Client)
-                .HasForeignKey(r => r.ClientId);
+                .HasForeignKey(r => r.ClientId)
+                .OnDelete(DeleteBehavior.Cascade);  // ✅ Ensures Resources are deleted when Client is deleted
 
-            // ✅ Employee & Resources Relationship
+            // ✅ Employee & Resources Relationship (Fixes Orphaned Resources)
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Resources)
                 .WithOne(r => r.Employee)
-                .HasForeignKey(r => r.EmployeeId);
+                .HasForeignKey(r => r.EmployeeId)
+                .OnDelete(DeleteBehavior.Cascade);  // ✅ Ensures Resources are deleted when Employee is deleted
 
             // ✅ Client Profile Cross Table (Many-to-Many)
             modelBuilder.Entity<ClientProfileCrossTable>()
@@ -52,13 +48,16 @@ namespace Client_Invoice_System.Data
             modelBuilder.Entity<ClientProfileCrossTable>()
                 .HasOne(cpc => cpc.Client)
                 .WithMany(c => c.ClientProfileCrosses)
-                .HasForeignKey(cpc => cpc.ClientId);
+                .HasForeignKey(cpc => cpc.ClientId)
+                .OnDelete(DeleteBehavior.Cascade); // ✅ Ensures Cross Table records are deleted
 
             modelBuilder.Entity<ClientProfileCrossTable>()
                 .HasOne(cpc => cpc.Employee)
                 .WithMany()
-                .HasForeignKey(cpc => cpc.EmployeeId);
+                .HasForeignKey(cpc => cpc.EmployeeId)
+                .OnDelete(DeleteBehavior.Cascade); // ✅ Ensures Employee-related Cross Table records are deleted
         }
+
 
     }
 }

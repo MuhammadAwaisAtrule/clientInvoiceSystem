@@ -12,21 +12,7 @@ namespace Client_Invoice_System.Repository
     {
         public ClientRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Client>> GetActiveClientsAsync()
-        {
-            try
-            {
-                return await _context.ActiveClients
-                    .Where(ac => ac.Status == true)
-                    .Select(ac => ac.Client)
-                    .ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error retrieving active clients: {ex.Message}");
-                return Enumerable.Empty<Client>(); // Return empty list on failure
-            }
-        }
+        
 
         public async Task<bool> EmailExistsAsync(string email)
         {
@@ -67,11 +53,7 @@ namespace Client_Invoice_System.Repository
                     return; 
                 }
 
-                var activeClient = await _context.ActiveClients.FirstOrDefaultAsync(ac => ac.ClientId == clientId);
-                if (activeClient != null)
-                {
-                    _context.ActiveClients.Remove(activeClient); 
-                }
+                
 
                 _dbSet.Remove(client); 
                 await _context.SaveChangesAsync(); 
