@@ -20,44 +20,56 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Workspace/Practice/Client_Invoice_System/Components/ActiveClients.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY3RpdmVDbGllbnRzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Workspace/Practice/Client_Invoice_System/Components/AddEditClient.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRFZGl0Q2xpZW50LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Workspace/Practice/Client_Invoice_System/Components/AddEditEmployee.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRFZGl0RW1wbG95ZWUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Workspace/Practice/Client_Invoice_System/Components/AddEditResource.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRFZGl0UmVzb3VyY2UucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Workspace/Practice/Client_Invoice_System/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Workspace/Practice/Client_Invoice_System/Components/ClientsList.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDbGllbnRzTGlzdC5yYXpvcg==
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/ActiveClients.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEFjdGl2ZUNsaWVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Workspace/Practice/Client_Invoice_System/Components/Employees.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFbXBsb3llZXMucmF6b3I=
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/AddEditClient.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEFkZEVkaXRDbGllbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Workspace/Practice/Client_Invoice_System/Components/Invoice.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbnZvaWNlLnJhem9y
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/AddEditEmployee.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEFkZEVkaXRFbXBsb3llZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Workspace/Practice/Client_Invoice_System/Components/OwnerPaymentProfile.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPd25lclBheW1lbnRQcm9maWxlLnJhem9y
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/AddEditOwnerPaymentProfile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEFkZEVkaXRPd25lclBheW1lbnRQcm9maWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Workspace/Practice/Client_Invoice_System/Components/Owner_Profile.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPd25lcl9Qcm9maWxlLnJhem9y
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/AddEditOwnerProfile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEFkZEVkaXRPd25lclByb2ZpbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/AddEditResource.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEFkZEVkaXRSZXNvdXJjZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/ClientsList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXENsaWVudHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/Employees.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEVtcGxveWVlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/InvoicePage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXEludm9pY2VQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/OwnerPaymentProfile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXE93bmVyUGF5bWVudFByb2ZpbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/Owner_Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXE93bmVyX1Byb2ZpbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Clients/Resources.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbGllbnRzXFJlc291cmNlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Error.razor]
@@ -66,10 +78,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Workspace/Practice/Client_Invoice_System/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Workspace/Practice/Client_Invoice_System/Components/Resources.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXNvdXJjZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Workspace/Practice/Client_Invoice_System/Components/Routes.razor]

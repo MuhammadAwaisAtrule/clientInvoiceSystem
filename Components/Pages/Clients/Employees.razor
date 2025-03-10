@@ -7,9 +7,10 @@
 @inject EmployeeRepository EmployeeRepository
 @inject NavigationManager Navigation
 
-<h3>Employees</h3>
-
-<button class="btn btn-primary mb-3" @onclick="NavigateToAddEmployee">Add Employee</button>
+<h3>Employees (@(employees?.Count ?? 0))</h3>
+<div class="d-flex justify-content-end">
+    <button class="btn btn-primary mb-3" @onclick="NavigateToAddEmployee">Add Employee</button>
+</div>
 
 @if (employees != null && employees.Any())
 {
@@ -44,7 +45,6 @@ else
 {
     <p>No employees found.</p>
 }
-
 @code {
     private List<Employee> employees = new();
 

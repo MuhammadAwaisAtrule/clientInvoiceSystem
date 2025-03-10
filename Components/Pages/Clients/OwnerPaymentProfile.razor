@@ -1,0 +1,89 @@
+﻿@page "/owner-payment-profiles"
+@rendermode InteractiveServer
+@using Client_Invoice_System.Models
+@using Client_Invoice_System.Repositories
+@inject OwnerPaymentProfileRepository OwnerPaymentProfileRepository
+@inject NavigationManager Navigation
+
+<h3>Owner Payment Profiles</h3>
+
+<div class="d-flex justify-content-end">
+
+
+    <button class="btn btn-primary mb-3" @onclick="NavigateToAddPaymentProfile">Add New Payment Profile</button>
+
+</div>
+@if (paymentProfiles != null && paymentProfiles.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Owner</th>
+                <th>IBAN Number</th>
+                <th>Currency</th>
+                <th>Account Title</th>
+                <th>Account Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var profile in paymentProfiles)
+            {
+                <tr>
+                    <td>@profile.Owner?.OwnerName</td>
+                    <td>@profile.IBANNumber</td>
+                    <td>@profile.Currency</td>
+                    <td>@profile.AccountTitle</td>
+                    <td>@profile.AccountNumber</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" @onclick="() => EditPaymentProfile(profile.Id)">Edit</button>
+                        <button class="btn btn-danger btn-sm" @onclick="() => DeletePaymentProfile(profile.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No payment profiles found.</p>
+}
+
+@code {
+    private List<PaymentProfile> paymentProfiles = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            paymentProfiles = (await OwnerPaymentProfileRepository.GetAllAsync()).ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading payment profiles: {ex.Message}");
+        }
+    }
+
+    private void NavigateToAddPaymentProfile()
+    {
+        Navigation.NavigateTo("/add-edit-owner-payment-profile");
+    }
+
+    private void EditPaymentProfile(int id)
+    {
+        Navigation.NavigateTo($"/add-edit-owner-payment-profile/{id}");
+    }
+
+    private async Task DeletePaymentProfile(int id)
+    {
+        try
+        {
+            await OwnerPaymentProfileRepository.DeleteAsync(id);
+            paymentProfiles = (await OwnerPaymentProfileRepository.GetAllAsync()).ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error deleting payment profile: {ex.Message}");
+        }
+    }
+}

@@ -1,0 +1,163 @@
+﻿@page "/invoicesPage"
+@rendermode InteractiveServer
+@using Client_Invoice_System.Models
+@using Client_Invoice_System.Repository
+@using Client_Invoice_System.Services
+
+@inject InvoiceService InvoiceService
+@inject ClientRepository ClientRepo
+@inject IJSRuntime JS
+
+<h3>Invoice Management</h3>
+
+<div class="mb-3">
+    <label>Select Client:</label>
+    <select class="form-control" @bind="SelectedClientId">
+        <option value="">-- Select Client --</option>
+        @foreach (var client in Clients)
+        {
+            <option value="@client.ClientId">@client.Name (@client.Currency)</option>
+        }
+    </select>
+</div>
+
+<button class="btn btn-primary" @onclick="GenerateInvoice">Save Invoice</button>
+<hr />
+
+<h4>Existing Invoices</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Invoice Date</th>
+            <th>Total Amount</th>
+            <th>Currency</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Invoices != null && Invoices.Any())
+        {
+            @foreach (var invoice in Invoices)
+            {
+                <tr>
+                    <td>@(invoice.Client?.Name ?? "Unknown")</td>
+                    <td>@invoice.InvoiceDate.ToShortDateString()</td>
+                    <td>@invoice.TotalAmount.ToString("C2", new System.Globalization.CultureInfo(invoice.Currency ?? "en-US"))</td>
+                    <td>@(invoice.Currency ?? "USD")</td>
+                    <td>
+                        <span class="badge @(invoice.IsPaid ? "bg-success" : "bg-danger")">
+                            @(invoice.IsPaid ? "Paid" : "Unpaid")
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" @onclick="() => DownloadInvoice(invoice.ClientId)">Download</button>
+                        <button class="btn btn-sm btn-success" @onclick="() => SendInvoice(invoice.ClientId)">Send Email</button>
+                        <button class="btn btn-sm btn-warning" @onclick="() => MarkAsPaid(invoice.InvoiceId)" disabled="@invoice.IsPaid">
+                            Mark as Paid
+                        </button>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6" class="text-center text-muted">No invoices found</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Client> Clients = new();
+    private List<Invoice> Invoices = new();
+    private int SelectedClientId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Clients = (await ClientRepo.GetAllAsync()).ToList();
+            Invoices = (await InvoiceService.GetAllInvoicesAsync()).ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading invoices: {ex.Message}");
+        }
+    }
+
+    private async Task DownloadInvoice(int clientId)
+    {
+        try
+        {
+            if (clientId <= 0)
+            {
+                Console.WriteLine("Invalid Client ID");
+                return;
+            }
+
+            byte[] pdfData = await InvoiceService.GenerateInvoicePdfAsync(clientId);
+            var fileName = $"Invoice_{clientId}.pdf";
+            await JS.InvokeVoidAsync("downloadFileFromStream", fileName, new DotNetStreamReference(new MemoryStream(pdfData)), "application/pdf");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error downloading invoice: {ex.Message}");
+        }
+    }
+  
+    private async Task SendInvoice(int clientId)
+    {
+        try
+        {
+            if (clientId <= 0)
+            {
+                Console.WriteLine("Invalid Client ID");
+                return;
+            }
+
+            await InvoiceService.SendInvoiceToClientAsync(clientId);
+            Console.WriteLine($"Invoice sent successfully to Client {clientId}.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending invoice: {ex.Message}");
+        }
+    }
+    private async Task GenerateInvoice()
+    {
+        try
+        {
+            if (SelectedClientId <= 0)
+            {
+                Console.WriteLine("Invalid Client ID");
+                return;
+            }
+
+            await InvoiceService.SaveInvoiceAsync(SelectedClientId);
+            Console.WriteLine("Invoice saved successfully.");
+
+            // Refresh the invoice list
+            Invoices = (await InvoiceService.GetAllInvoicesAsync()).ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error generating invoice: {ex.Message}");
+        }
+    }
+    private async Task MarkAsPaid(int invoiceId)
+    {
+        try
+        {
+            await InvoiceService.MarkInvoiceAsPaidAsync(invoiceId);
+            Invoices = (await InvoiceService.GetAllInvoicesAsync()).ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error marking invoice as paid: {ex.Message}");
+        }
+    }
+}

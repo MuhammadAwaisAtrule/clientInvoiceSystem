@@ -19,6 +19,7 @@
                 <option value="@client.ClientId">@client.Name</option>
             }
         </select>
+
     </div>
 
     <div class="mb-3">
@@ -41,6 +42,11 @@
         <label class="form-label">Consumed Hours</label>
         <input type="number" class="form-control" @bind="EditingResource.ConsumedTotalHours" />
     </div>
+    <div class="mb-3">
+        <label class="form-label">Contract Due Date</label>
+        <input type="date" class="form-control" @bind="EditingResource.DueDate" />
+    </div>
+
     <div class="d-flex justify-content-end gap-2">
     <button class="btn btn-success" @onclick="SaveResource">@(EditingResource.ResourceId == 0 ? "Add" : "Update") Resource</button>
     <button class="btn btn-secondary ms-2" @onclick="Cancel">Cancel</button>
@@ -52,12 +58,18 @@
     private Resource EditingResource = new();
     private List<Client> Clients = new();
     private List<Employee> Employees = new();
+    
+
+   
 
     protected override async Task OnInitializedAsync()
     {
         Clients = (await ClientRepository.GetAllAsync()).ToList();
         Employees = (await EmployeeRepository.GetAllAsync()).ToList();
-
+        if (EditingResource.DueDate == null || EditingResource.DueDate == DateTime.MinValue)
+        {
+            EditingResource.DueDate = DateTime.Today;  
+        }
         if (ResourceId.HasValue)
         {
             EditingResource = await ResourceRepository.GetByIdAsync(ResourceId.Value) ?? new();
@@ -66,17 +78,27 @@
 
     private async Task SaveResource()
     {
-        if (EditingResource.ResourceId == 0)
+        try
         {
-            await ResourceRepository.AddAsync(EditingResource);
-        }
-        else
-        {
-            await ResourceRepository.UpdateAsync(EditingResource);
-        }
+            if (EditingResource.ResourceId == 0)
+            {
+                await ResourceRepository.AddAsync(EditingResource);
+                Console.WriteLine($"✅ Resource {EditingResource.ResourceName} added successfully.");
+            }
+            else
+            {
+                await ResourceRepository.UpdateAsync(EditingResource);
+                Console.WriteLine($"✅ Resource {EditingResource.ResourceName} updated successfully.");
+            }
 
-        Navigation.NavigateTo("/resources");
+            Navigation.NavigateTo("/resources");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Error saving resource: {ex.Message}");
+        }
     }
+
 
     private void Cancel()
     {
